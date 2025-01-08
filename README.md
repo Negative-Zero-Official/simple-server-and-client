@@ -62,15 +62,8 @@ This script implements the server-side functionality, including:
 
 ## Known Issues
 - Ensure the specified port (`50000`) is free before starting the server.
-- Limited error handling for network interruptions or invalid inputs.
 
 ## Future Enhancements
-- Add features such as message logging or group communication.
-- Implement a graphical user interface (GUI) for easier interaction.
-- Enhance error handling and validation mechanisms.
-
-## Contributing
-Feel free to fork this repository, make improvements, and submit a pull request. Contributions are welcome!
-
-## License
-This project is licensed under the MIT License.
+[] Add features such as message logging or group communication.
+[] Implement a graphical user interface (GUI) for easier interaction.
+[] Enhance error handling and validation mechanisms.
