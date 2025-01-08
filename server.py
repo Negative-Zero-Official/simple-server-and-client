@@ -10,6 +10,7 @@ PORT = 50000
 server = None
 shutdown_flag = threading.Event()
 client_socket = None
+clients = []
 
 def is_port_free(port):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -27,12 +28,14 @@ else:
     print(f"Port {PORT} is in use.")
     
 def handle_client(client_socket, addr):
+    clients.append(client_socket)
     while True:
         try:
             message = client_socket.recv(1024).decode('utf-8')
             if message:
                 print(f"{addr}: {message}")
-                client_socket.send((f"{addr}: {message}").encode('utf-8'))
+                for client in clients:
+                    client.send((f"{addr}: {message}").encode('utf-8'))
             else:
                 break
         except ConnectionAbortedError as e:
