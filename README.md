@@ -64,6 +64,6 @@ This script implements the server-side functionality, including:
 - Ensure the specified port (`50000`) is free before starting the server.
 
 ## Future Enhancements
-[] Add features such as message logging or group communication.
-[] Implement a graphical user interface (GUI) for easier interaction.
-[] Enhance error handling and validation mechanisms.
+[ ] Add features such as message logging or group communication.
+[ ] Implement a graphical user interface (GUI) for easier interaction.
+[ ] Enhance error handling and validation mechanisms.
