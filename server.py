@@ -32,11 +32,6 @@ def handle_client(client_socket, addr):
             message = client_socket.recv(1024).decode('utf-8')
             if message:
                 print(f"{addr}: {message}")
-                # client_socket.send("Response 1".encode('utf-8'))
-                # time.sleep(1)
-                # client_socket.send("Response 2".encode('utf-8'))
-                # time.sleep(1)
-                # client_socket.send("Response 3".encode('utf-8'))
                 client_socket.send((f"{addr}: {message}").encode('utf-8'))
             else:
                 break
@@ -71,7 +66,8 @@ def start_server():
 def stop_server(signum, frame):
     global client_socket
     print("Shutting down server...")
-    client_socket.close()
+    if client_socket:
+        client_socket.close()
     if server:
         server.close()
     sys.exit(0)
